@@ -1,0 +1,279 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Alex Mwaura Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a facilitator's guide — a narrow left rail of section labels beside a single readable column; the learning pathway is the one bold moment. */
+:root {
+  --bg: #f4f7f8;
+  --surface: #ffffff;
+  --ink: #102433;
+  --muted: #536674;
+  --line: #d7e1e6;
+  --accent: #0d716f;
+  --accent-soft: #e0efee;
+  --brass: #9a6c14;
+  --display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1720; --surface: #11212c; --ink: #e5eef2; --muted: #9db0bc;
+    --line: #22394a; --accent: #45c2b8; --accent-soft: #143536; --brass: #d8aa52;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1720; --surface: #11212c; --ink: #e5eef2; --muted: #9db0bc;
+  --line: #22394a; --accent: #45c2b8; --accent-soft: #143536; --brass: #d8aa52;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 1060px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 72px; display: grid; gap: 64px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.label { font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--brass); }
+
+/* Hero */
+.hero { display: grid; gap: 24px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(48px, 9vw, 96px); line-height: .95; letter-spacing: -.01em; }
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero .lede { font-size: clamp(18px, 2.2vw, 21px); max-width: 60ch; color: var(--ink); }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; }
+.roles span { font-size: 13px; font-weight: 600; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.contact { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); }
+.contact b { color: var(--ink); font-weight: 600; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--line); }
+.fact { padding: 18px 16px 18px 0; display: grid; gap: 2px; }
+.fact + .fact { padding-left: 16px; border-left: 1px solid var(--line); }
+.fact strong { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.fact span { font-size: 13px; color: var(--muted); }
+
+/* Sections */
+.sec { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+.sec > header { display: grid; align-content: start; gap: 6px; }
+.sec > header h2 { font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1.1; }
+.body { display: grid; gap: 20px; min-width: 0; }
+.body > p { max-width: 65ch; }
+
+/* Pathway: the bold moment */
+.path { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.step { padding: 18px 16px; display: grid; gap: 6px; position: relative; }
+.step + .step { border-left: 1px solid var(--line); }
+.step .n { font-family: var(--mono); font-size: 12px; color: var(--accent); }
+.step h3 { font-size: 16px; }
+.step p { font-size: 14px; color: var(--muted); }
+.step:not(:last-child)::after { content: "→"; position: absolute; right: -9px; top: 16px; width: 18px; height: 18px; display: grid; place-items: center; font-size: 12px; background: var(--accent); color: var(--surface); border-radius: 50%; z-index: 1; }
+
+.modules { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.modules li { display: grid; grid-template-columns: 44px minmax(0, 170px) minmax(0, 1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.modules .no { font-family: var(--mono); font-size: 13px; color: var(--accent); }
+.modules .t { font-weight: 600; }
+.modules .d { font-size: 14px; color: var(--muted); }
+
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.card h3 { font-size: 17px; }
+.card p { font-size: 15px; color: var(--muted); }
+.ticks { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.ticks li { padding-left: 22px; position: relative; max-width: 65ch; }
+.ticks li::before { content: ""; position: absolute; left: 0; top: .6em; width: 10px; height: 2px; background: var(--accent); }
+
+.callout { background: var(--accent-soft); border-radius: 10px; padding: 18px 20px; display: grid; gap: 6px; }
+.callout strong { font-family: var(--display); font-weight: 400; font-size: 26px; line-height: 1.15; }
+
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.timeline li:first-child { border-top: 1px solid var(--line); }
+.timeline .when { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline .what { display: grid; gap: 2px; }
+.timeline .what b { font-weight: 600; }
+.timeline .what span { font-size: 14px; color: var(--muted); }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chips span { font-size: 13px; padding: 5px 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; }
+
+.reach { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.copy { font: 600 14px var(--body); padding: 10px 16px; border-radius: 8px; border: 1px solid var(--accent); background: var(--accent); color: var(--surface); cursor: pointer; }
+.copy:hover { filter: brightness(1.08); }
+.reach code { font-family: var(--mono); font-size: 14px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); user-select: all; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (max-width: 760px) {
+  .sec { grid-template-columns: 1fr; gap: 16px; }
+  .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fact:nth-child(3) { padding-left: 0; border-left: 0; }
+  .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .path { grid-template-columns: 1fr 1fr; }
+  .step:nth-child(3) { border-left: 0; }
+  .step:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .step:nth-child(2)::after { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .modules li { grid-template-columns: 36px minmax(0, 1fr); }
+  .modules .d { grid-column: 2; }
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * { animation: rise .6s ease both; }
+  .hero > *:nth-child(2) { animation-delay: .05s; }
+  .hero > *:nth-child(3) { animation-delay: .1s; }
+  @keyframes rise { from { transform: translateY(8px); } to { transform: none; } }
+}
+</style>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="label">Learning &amp; Development · Training &amp; Facilitation</span>
+    <h1>Alex Mwaura<br><em>designs learning</em> and delivers it.</h1>
+    <p class="lede">I build training programs from the first learning objective to the final assessment, and I facilitate them for diverse groups of adult learners. Over four years I designed and now run a complete six-module program at Moringa School, coach learners through structured feedback, and run organisation-wide awareness campaigns that change how people work.</p>
+    <div class="roles">
+      <span>Learning &amp; Development</span><span>Facilitator &amp; Trainer</span><span>Program Designer</span><span>Founder &amp; CEO, Rahisi Mtaani</span>
+    </div>
+    <div class="contact">
+      <span><b>Nairobi, Kenya</b> · open to sea contracts</span>
+      <span>xocan43@gmail.com</span>
+      <span>+254 748 452 315</span>
+      <a href="https://www.linkedin.com/in/alex-mwaura43">LinkedIn</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>4+</strong><span>years designing and delivering adult learning</span></div>
+      <div class="fact"><strong>6</strong><span>modules in the program I built from scratch</span></div>
+      <div class="fact"><strong>100%</strong><span>of OKRs met in every employed role</span></div>
+      <div class="fact"><strong>3</strong><span>industry certifications held</span></div>
+    </div>
+  </section>
+
+  <section class="sec" id="program">
+    <header><span class="label">Program design</span><h2>How I build a learning program</h2></header>
+    <div class="body">
+      <p>Every program I build follows the same pathway. I start from what learners must be able to do, then design the modules, activities and assessments that get them there. I keep improving the program from learner results and feedback.</p>
+      <div class="path" role="list">
+        <div class="step" role="listitem"><span class="n">Step 1</span><h3>Objectives</h3><p>Define what each learner must be able to do by the end.</p></div>
+        <div class="step" role="listitem"><span class="n">Step 2</span><h3>Modules</h3><p>Structure the content into a clear, progressive sequence.</p></div>
+        <div class="step" role="listitem"><span class="n">Step 3</span><h3>Activities</h3><p>Hands-on labs, real scenarios and practice that build skills.</p></div>
+        <div class="step" role="listitem"><span class="n">Step 4</span><h3>Assessment</h3><p>Quizzes and rubrics in Canvas LMS and Formstack to measure progress.</p></div>
+      </div>
+      <p>The program I designed and deliver at Moringa School runs in this order:</p>
+      <ol class="modules">
+        <li><span class="no">M1</span><span class="t">Foundations</span><span class="d">Virtualisation, Windows and Linux, the command line, networking, IP addressing</span></li>
+        <li><span class="no">M2</span><span class="t">Programming &amp; Systems</span><span class="d">Python, Linux and Windows administration, Active Directory</span></li>
+        <li><span class="no">M3</span><span class="t">Defense &amp; Intelligence</span><span class="d">Hardening, cloud security, governance, monitoring, incident response</span></li>
+        <li><span class="no">M4</span><span class="t">Architecture &amp; Forensics</span><span class="d">Zero trust, IoT security, digital forensics, malware analysis</span></li>
+        <li><span class="no">M5</span><span class="t">Offensive Security</span><span class="d">Penetration testing, social engineering, web and network attacks</span></li>
+        <li><span class="no">M6</span><span class="t">Capstone</span><span class="d">Learner-led projects, coached and assessed with structured rubrics</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="facilitation">
+    <header><span class="label">Learning delivery</span><h2>How I facilitate</h2></header>
+    <div class="body">
+      <div class="cards">
+        <div class="card"><h3>Built for adult learners</h3><p>I adapt each session to the group's experience, link new ideas to what people already know, and make time for practice over lecture.</p></div>
+        <div class="card"><h3>Inclusive and engaging</h3><p>I encourage every voice, welcome questions and different views, and use real stories and scenarios to make content relevant.</p></div>
+        <div class="card"><h3>Coaching and feedback</h3><p>I give structured, rubric-based feedback as learners practise, and coach capstone projects so skills carry over to real work.</p></div>
+        <div class="card"><h3>Clear on complex topics</h3><p>I turn technical, detailed material into plain, practical guidance for audiences at every level.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="culture">
+    <header><span class="label">Culture &amp; awareness</span><h2>Changing everyday behaviour</h2></header>
+    <div class="body">
+      <div class="callout">
+        <span class="label">Company-wide campaign</span>
+        <strong>I planned and ran phishing simulations and security awareness campaigns for all staff.</strong>
+        <p>The goal was simple: help every team member spot risks and build safer habits in their daily work, so good practice becomes part of the culture.</p>
+      </div>
+      <ul class="ticks">
+        <li>Led a company-wide assessment with signed scopes and full management approval, working closely with leadership.</li>
+        <li>Built and maintain the company asset inventory, keeping clear, accurate records.</li>
+        <li>Wrote incident response plans and playbooks so teams follow the same clear procedures under pressure.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="admin">
+    <header><span class="label">Learning administration</span><h2>Records, tools and follow-through</h2></header>
+    <div class="body">
+      <ul class="ticks">
+        <li>Build and manage quizzes, rubrics and course content in <b>Canvas LMS</b> and <b>Formstack</b>.</li>
+        <li>Track learner progress and keep accurate learner records and results.</li>
+        <li>Evaluate how well each module works and update content from learner outcomes and feedback.</li>
+        <li>Plan sessions, labs and materials in advance so every cohort gets the same consistent experience.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="leadership">
+    <header><span class="label">Leadership &amp; business</span><h2>Leading a team and a business</h2></header>
+    <div class="body">
+      <p>As Founder &amp; CEO of <b>Rahisi Mtaani</b>, a Kenyan commerce platform for retail shopkeepers, I lead a distributed team, set direction and document processes and decisions. The product is live on Google Play.</p>
+      <div class="facts" style="grid-template-columns: repeat(3, minmax(0,1fr));">
+        <div class="fact"><strong>0 → 500</strong><span>users in the first 6 months on the market</span></div>
+        <div class="fact"><strong>24 h</strong><span>order and delivery turnaround for shopkeepers</span></div>
+        <div class="fact"><strong>4</strong><span>connected systems: app, dashboard, backend, POS</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="experience">
+    <header><span class="label">Experience</span><h2>Where I have worked</h2></header>
+    <div class="body">
+      <ol class="timeline">
+        <li><span class="when">2023 – present</span><span class="what"><b>Cyber Security Specialist &amp; Lecturer · Moringa School</b><span>Design and deliver a six-module adult learning program; run staff awareness campaigns</span></span></li>
+        <li><span class="when">2024 – present</span><span class="what"><b>Founder &amp; CEO · Rahisi Mtaani</b><span>Previously Senior Software Engineer; lead the team, product and growth</span></span></li>
+        <li><span class="when">2024 – 2025</span><span class="what"><b>Cybersecurity Consultant · East Africa Data Handlers</b><span>Clear reports and guidance for enterprise clients, including Kenya Airways</span></span></li>
+        <li><span class="when">2023 – 2026</span><span class="what"><b>Cyber Security Specialist · Tech4Dev</b><span>Remote seasonal contract with stakeholders in a fully virtual setting</span></span></li>
+        <li><span class="when">2022 – 2023</span><span class="what"><b>Software Engineer Technical Mentor · Moringa School</b><span>Mentored and coached learners at different levels</span></span></li>
+        <li><span class="when">2019 – 2022</span><span class="what"><b>IT and Operations Analyst · CYDEO</b><span>Supported operations and internal users</span></span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="sec" id="credentials">
+    <header><span class="label">Credentials</span><h2>Education and certifications</h2></header>
+    <div class="body">
+      <ul class="ticks">
+        <li><b>Bachelor of Commerce (Finance)</b> · The Technical University of Kenya</li>
+        <li><b>BSc Data Science &amp; Analytics</b> (in progress) · GISMA University of Applied Sciences, Germany</li>
+      </ul>
+      <div class="chips"><span>CompTIA Security+</span><span>Cisco CyberOps Associate</span><span>Cisco Networking Essentials</span></div>
+      <p>Verified badges: <a href="https://www.credly.com/users/alex-mwaura">credly.com/users/alex-mwaura</a> · Hands-on practice: <a href="https://tryhackme.com/p/canSir43">tryhackme.com/p/canSir43</a> · Code: <a href="https://github.com/x0can">github.com/x0can</a></p>
+      <p><b>Languages:</b> English (fluent), Swahili (native).</p>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <header><span class="label">Contact</span><h2>Let's talk</h2></header>
+    <div class="body">
+      <p>I am available for full onboard contracts and ready to sit the Marlins English test. Full CV available on request.</p>
+      <div class="reach">
+        <code id="email">xocan43@gmail.com</code>
+        <button class="copy" id="copy-email" type="button">Copy email</button>
+        <code>+254 748 452 315</code>
+      </div>
+    </div>
+  </section>
+
+  <footer>Alex Mwaura · Nairobi, Kenya · References available on request</footer>
+</main>
+
+<script>
+document.getElementById('copy-email').addEventListener('click', function () {
+  var btn = this, text = document.getElementById('email').textContent;
+  function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy email'; }, 1800); }
+  function fallback() {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('email'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected, press copy');
+  }
+  try { navigator.clipboard.writeText(text).then(function () { done('Copied'); }, fallback); } catch (e) { fallback(); }
+});
+</script>
+
+</body></html>
